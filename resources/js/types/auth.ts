@@ -7,6 +7,9 @@ export type User = {
     two_factor_enabled?: boolean;
     created_at: string;
     updated_at: string;
+    branch_id?: number | null;
+    branch?: import('./index').Branch | null;
+    roles?: import('./index').Role[];
     [key: string]: unknown;
 };
 
