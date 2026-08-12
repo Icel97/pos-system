@@ -1,0 +1,30 @@
+# Dependencias
+node_modules/
+vendor/
+
+# Archivos compilados de Frontend (Vite)
+public/build/
+public/hot
+
+# Caché y archivos temporales del framework
+bootstrap/cache/
+storage/framework/
+storage/logs/
+storage/debugbar/
+
+# Bases de datos locales
+database/database.sqlite
+database/*.sqlite
+database/*.sqlite-journal
+
+# Entorno y variables sensibles
+.env
+.env.backup
+
+# Control de versiones
+.git/
+
+# Logs de dependencias
+npm-debug.log
+yarn-error.log
+composer.phar
