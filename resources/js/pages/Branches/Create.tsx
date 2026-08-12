@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
-import { branches as branchRoutes } from '@/routes/branches';
+import branchRoutes from '@/routes/branches';
 import { FormEventHandler } from 'react';
 
 export default function Create() {
@@ -11,6 +11,7 @@ export default function Create() {
         name: '',
         phone: '',
         address: '',
+        is_warehouse: false,
         is_active: true,
     });
 
@@ -61,6 +62,16 @@ export default function Create() {
                                 onChange={(e) => setData('address', e.target.value)}
                             />
                             {errors.address && <p className="text-sm text-destructive">{errors.address}</p>}
+                        </div>
+
+                        <div className="flex items-center space-x-2">
+                            <Checkbox
+                                id="is_warehouse"
+                                checked={data.is_warehouse}
+                                onCheckedChange={(checked) => setData('is_warehouse', checked as boolean)}
+                            />
+                            <Label htmlFor="is_warehouse">Es Bodega</Label>
+                            {errors.is_warehouse && <p className="text-sm text-destructive">{errors.is_warehouse}</p>}
                         </div>
 
                         <div className="flex items-center space-x-2">

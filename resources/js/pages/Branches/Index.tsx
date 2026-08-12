@@ -11,7 +11,7 @@ import {
 import { Branch } from '@/types';
 import { Badge } from '@/components/ui/badge';
 import { Edit, Plus, Trash } from 'lucide-react';
-import { branches as branchRoutes } from '@/routes/branches';
+import branchRoutes from '@/routes/branches';
 
 interface Props {
     branches: Branch[];
@@ -66,6 +66,11 @@ export default function Index({ branches }: Props) {
                                             <Badge variant={branch.is_active ? 'default' : 'secondary'}>
                                                 {branch.is_active ? 'Activo' : 'Inactivo'}
                                             </Badge>
+                                            {branch.is_warehouse && (
+                                                <Badge variant="outline" className="ml-2">
+                                                    Bodega
+                                                </Badge>
+                                            )}
                                         </TableCell>
                                         <TableCell className="text-right">
                                             <div className="flex justify-end gap-2">

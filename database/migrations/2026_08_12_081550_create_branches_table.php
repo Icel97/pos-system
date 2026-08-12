@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->text('address')->nullable();
             $table->string('phone')->nullable();
+            $table->boolean('is_warehouse')->default(false);
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

@@ -25,7 +25,8 @@ class UpdateBranchRequest extends FormRequest
         return [
             'name' => 'required|string|max:255|unique:branches,name,' . $this->branch->id,
             'address' => 'nullable|string',
-            'phone' => 'nullable|string|max:20',
+            'phone' => 'nullable|string|regex:/^([0-9\s\-\+\(\)]*)$/|min:7|max:20',
+            'is_warehouse' => 'boolean',
             'is_active' => 'boolean',
         ];
     }
